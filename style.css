@@ -5,18 +5,28 @@
 }
 @font-face {
     font-family: myGothic;
-    src: url(fonts/Altgotisch.ttf);
-    src: url(fonts/Decay-M5RB.ttf);
-    src: url(fonts/DeathCrowRegular-dBqx.ttf);
     src: url(fonts/TypographerRotundaAlt.ttf);
+}
+@font-face {
+    font-family: myGothic_2;
+    src: url(fonts/Altgotisch.ttf);
+}
+@font-face {
+    font-family: myGothic_3;
+    src: url(fonts/Decay-M5RB.ttf);
+}
+@font-face {
+    font-family: myGothic_4;
+    src: url(fonts/DeathCrowRegular-dBqx.ttf);
 }
 body {
     width: 100%;
     min-height: 100vh;
-    display: grid;
-    place-content: center;
+    /* display: grid; */
+    /* place-content: center; */
     font-family: sans-serif;
-    overflow: scroll;
+    /* overflow: scroll; */
+    background: hsla(251, 100%, 2%, 1);
 }
 #chayhona_1 {
     position: absolute;
@@ -29,6 +39,13 @@ body {
     /* mix-blend-mode: screen; */
     top: -20%;
     left: -28%;
+}
+.main {
+    color: hsla(54, 100%, 45%, 1);
+}
+.main__menu {
+    text-align: center;
+    font: 5vw myGothic;
 }
 /* color theory */
 .colorTheory {
@@ -84,7 +101,8 @@ body {
     /* left: 50%; */
     text-align: center;
     color: rgba(255, 255, 255, 1);
-    font-size: 4rem;
+    font-size: 10vw;
+    letter-spacing: 0.1em;
     color: hsla(0, 100%, 50%, 0.5);
     color: hsla(0, 100%, 100%, 0.8);
     /* background: url(images/taj_mahal.jpg); */
@@ -96,7 +114,7 @@ body {
     /* filter: drop-shadow(2px 2px 2px hsla(22deg, 80%, 30%, 0.9)); */
     /* box-shadow: 0px 1px 0px hsl(0deg 0% 0% / 50%); */
     /* background: linear-gradient(180deg, transparent, hsla(0, 0%, 0%, 0.3)), url(images/quatrefoil.jpg); */
-    /* background: linear-gradient(180deg, hsla(0, 0%, 0%, 0.8), transparent); */
+    background: linear-gradient(180deg, hsla(0, 0%, 0%, 0.6), transparent 80%);
     text-shadow: 1px 1px 1px hsl(0deg 0% 0% / 50%);
     /* text-shadow: 1px 2px 0px hsl(0deg 0% 0% / 50%), 0px 1px 0px hsl(0deg 0% 100% / 90%); */
     position: fixed;
