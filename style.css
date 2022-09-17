@@ -32,10 +32,14 @@ body {
 .header {
     width: 100%;
     /* position: relative; */
+    overflow-x: hidden;
 }
 .header__heroImg {
-    width: 100%;
+    width: 150%;
     display: block;
+    position: relative;
+    z-index: -1;
+    left: -25%;
 }
 
 .header__h1 {
