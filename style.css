@@ -74,8 +74,8 @@ body {
 .main {
     height: 800px;
     margin-block: 1.5em;
-    color: hsla(54, 100%, 45%, 1);
-    color: hsla(35, 75%, 45%, 1);
+    /* color: hsla(54, 100%, 45%, 1); */
+    /* color: hsla(35, 75%, 45%, 1); */
     background: url(images/parchment.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -84,18 +84,27 @@ body {
     background-position-y: 50%;
 
     display: grid;
-    place-items: center;
-    place-content: center;
+    /* place-items: center; */
+    /* place-content: center; */
 }
 .main__h2 {
     /* margin-top: -0.5em; */
-    text-align: center;
-    /* font: 5vw myGothic_2; */
-    font: 5vw myGothic;
-    /* font: 5vw myGothic_4; */
-    font-weight: 900;
-    text-shadow: 0px 1px 2px hsl(20deg 100% 20% / 90%);
-    text-shadow: 0px 1px 1px hsl(25deg 100% 8% / 93%);
+text-align: center;
+font: 5vw myGothic_2;
+font: 8vw myGothic;
+  font-weight: normal;
+/* font: 5vw myGothic_4; */
+font-weight: 900;
+/* text-shadow: 0px 1px 2px hsl(20deg 100% 20% / 90%); */
+/* text-shadow: 2px 2px 5px hsla(20deg, 50%, 50%, 0.9); */
+background-blend-mode: color-dodge;
+background: url(images/bg_1.jpg);
+  background-clip: border-box;
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+mix-blend-mode: color-burn;
+/* margin-block-start: -3em; */
+box-shadow: 0px 3px 0px 0px hsla(0, 50%, 30%, 0.9);
 }
 .main__menu {
     width: 100%;
@@ -104,6 +113,18 @@ body {
     margin: auto;
     /* margin-top: auto; */
     /* margin-top: 15%; */
+}
+.main__grid-container {
+    margin: auto;
+    margin-block-start: 170px;
+    /* overflow: auto; */
+    max-width: 430px;
+}
+.main {
+    border: 5px solid red;
+}
+.main__grid-container {
+    border: 5px dashed orange;
 }
 .main__parchment {
     /* width: 50%;
