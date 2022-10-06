@@ -13,6 +13,7 @@ window.onscroll = () => {
     heroImg()
     getWindowPageYOffset()
     getWindowScrollY()
+    getOffsetTopMain()
 }
 function getWindowPageYOffset() {
     windowPageYOffset = window.pageYOffset;
@@ -36,5 +37,11 @@ function heroImg() {
     if(scaleX != 0 && scaleY != 0) {
         heroImgEl.style.transform = `scale(${scaleX}, ${scaleY})`;
     }
+}
+function getOffsetTopMain() {
+    let main = document.querySelector('.main')
+    mainOffsetTop = main.offsetTop
+    test__p3.textContent = ''
+    test__p3.textContent = `${mainOffsetTop}`
 }
 
