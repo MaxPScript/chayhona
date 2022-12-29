@@ -3,51 +3,234 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 @font-face {
     font-family: myGothic;
-    src: url(fonts/TypographerRotundaAlt.ttf);
+    src: url(../fonts/TypographerRotundaAlt.ttf);
 }
+
 @font-face {
     font-family: myGothic_2;
-    src: url(fonts/Altgotisch.ttf);
+    src: url(../fonts/Altgotisch.ttf);
 }
+
 @font-face {
     font-family: myGothic_3;
-    src: url(fonts/Decay-M5RB.ttf);
+    src: url(../fonts/Decay-M5RB.ttf);
 }
+
 @font-face {
     font-family: myGothic_4;
-    src: url(fonts/DeathCrowRegular-dBqx.ttf);
+    src: url(../fonts/DeathCrowRegular-dBqx.ttf);
 }
+
+html,
+body {
+    width: 100%;
+    /* position: relative; */
+}
+
+.info {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: white;
+    font-size: 32px;
+}
+
+.enter {
+    /* display: inline-block; */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* position: relative; */
+    z-index: 1;
+    /* width: 35vw; */
+    cursor: pointer;
+    /* height: 20%; */
+    /* aspect-ratio: 2/1; */
+    /* outline: none; */
+    /* border: none; */
+    font-size: 6vw;
+    transition: all 0.2s;
+
+    /* transition: all 0.3s; */
+}
+
+.enter-glow {
+    position: relative;
+    background: linear-gradient(0deg, hsl(193 62% 26%), hsl(193 62% 26%));
+    background-color: #193942;
+    background-color: #193942;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    padding: 1.5rem 3rem;
+    border-radius: 0.25rem;
+    color: wheat;
+}
+
+/* .enter::before */
+
+.enter-glow::before,
+.enter-glow::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    border-radius: 0.25rem;
+    background: linear-gradient(45deg, hsl(0 100% 50%), hsl(40 100% 50%), hsl(80 100% 50%), hsl(120 100% 50%), hsl(160 100% 50%), hsl(200 100% 50%), hsl(240 100% 50%), hsl(280 100% 50%), hsl(320 100% 50%));
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: glow 22s infinite;
+}
+
+.enter-glow::after {
+    filter: blur(6px);
+    opacity: 0.8;
+}
+
+@keyframes glow {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* .enter */
+
 body {
     width: 100%;
     min-height: 100vh;
     /* display: grid; */
     /* place-content: center; */
     font-family: sans-serif;
+    background: black;
+    transition: all 1s;
+    /* background: red; */
     /* overflow: scroll; */
-    background: hsla(251, 100%, 2%, 1);
-    background-image: radial-gradient(hsla(254, 95%, 30%, 0.5), hsla(254, 97%, 1%, 0.9));
+    /* background: hsla(251, 100%, 2%, 1);
+    background-image: radial-gradient(hsla(254, 95%, 30%, 0.5), hsla(254, 97%, 1%, 0.9)); */
     /* background: url(images/bg_2_space.jpg);
-    background: url(images/bg_3_space.jpg);
     background: url(images/bg_4_space.jpg); */
+    /* background: url(images/bg_3_space.jpg);
 
     background-size: contain;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 59%;
+    background-position: 50% 59%; */
 }
+
+.container {
+    max-width: 1280px;
+    min-height: inherit;
+    margin: auto;
+    /* background-color: yellow; */
+    /* background-image: url(../images/bg_3_space.jpg); */
+    background-size: cover;
+    /* background-blend-mode: normal; */
+    mix-blend-mode: normal;
+
+    display: flex;
+    flex-direction: column;
+}
+
 .header {
-    width: 100%;
-    /* position: relative; */
-    overflow-x: hidden;
+    /* background-image: url(../images/taj_1920_1234.jpg); */
+    /* background-size: cover; */
+    /* mix-blend-mode: lighten; */
+    /* flex-basis: 30%; */
+    /* flex-grow: 1; */
+    /* min-height: 100vh; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.header h1 {
+    color: white;
+    /* color: hsl(223 59% 65%); */
+    position: absolute;
+    font-family: myGothic, serif;
+    text-transform: uppercase;
+    transition: all 1.2s;
+    /* font-family: myGothic_2, serif; */
+    /* font-family: myGothic_3, serif; */
+    /* font-family: myGothic_4, serif; */
+    /* width: 50vw; */
+}
+
+.header img {
+    /* object-fit: cover; */
+    /* object-fit: contain; */
+    width: 100%;
+    display: block;
+}
+
+.header__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: hsl(0 50% 0% / 0.7);
+    background-image: linear-gradient(0deg, hsl(0 50% 0%), hsl(0 50% 0% / 0));
+    transition: all 1.5s;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bg {
+    width: 100%;
+    height: 100vh;
+    background: url(images/taj_mahal_1.jpg);
+    background-position: 50%;
+    background-size: cover;
+    position: fixed;
+}
+
+.header {
+    /* width: 100%; */
+    /* position: relative; */
+    /* overflow-x: hidden; */
+}
+
 .header__heroImg {
-    width: 150%;
+    /* width: 150%;
     display: block;
     position: relative;
     z-index: -1;
-    left: -25%;
+    left: -25%; */
 }
 
 .header__h1 {
@@ -76,10 +259,11 @@ body {
     background: linear-gradient(180deg, hsla(0, 0%, 0%, 0.6), transparent 80%);
     text-shadow: 1px 1px 1px hsl(0deg 0% 0% / 50%);
     /* text-shadow: 1px 2px 0px hsl(0deg 0% 0% / 50%), 0px 1px 0px hsl(0deg 0% 100% / 90%); */
+    text-shadow: -1px 1px 1px hsl(0deg 0% 0% / 80%), 0px 1px 0px hsl(0deg 0% 100% / 0%);
     position: fixed;
 }
 
-.main {
+.main_ {
     /* height: 60vw; */
     height: 85vh;
     margin-block-start: 1.5em;
@@ -100,25 +284,27 @@ body {
     outline: 10px solid hsla(251, 100%, 50%, 1);
     outline-offset: -10px;
 }
+
 .main__h2 {
     /* margin-top: -0.5em; */
-text-align: center;
-font: 5vw myGothic_2;
-font: 8vw myGothic;
-  font-weight: normal;
-/* font: 5vw myGothic_4; */
-font-weight: 900;
-/* text-shadow: 0px 1px 2px hsl(20deg 100% 20% / 90%); */
-/* text-shadow: 2px 2px 5px hsla(20deg, 50%, 50%, 0.9); */
-/* background-blend-mode: color-dodge;
+    text-align: center;
+    font: 5vw myGothic_2;
+    font: 8vw myGothic;
+    font-weight: normal;
+    /* font: 5vw myGothic_4; */
+    font-weight: 900;
+    /* text-shadow: 0px 1px 2px hsl(20deg 100% 20% / 90%); */
+    /* text-shadow: 2px 2px 5px hsla(20deg, 50%, 50%, 0.9); */
+    /* background-blend-mode: color-dodge;
 background: url(images/bg_1.jpg);
   background-clip: border-box;
 -webkit-text-fill-color: transparent;
 -webkit-background-clip: text;
 mix-blend-mode: color-burn; */
-/* margin-block-start: -3em; */
-box-shadow: 0px 3px 0px 0px hsla(0, 50%, 30%, 0.9);
+    /* margin-block-start: -3em; */
+    box-shadow: 0px 3px 0px 0px hsla(0, 50%, 30%, 0.9);
 }
+
 .main__menu {
     --w: 100px;
     /* width: 100%; */
@@ -131,23 +317,27 @@ box-shadow: 0px 3px 0px 0px hsla(0, 50%, 30%, 0.9);
     position: relative;
     transform-style: preserve-3d;
     /* perspective: 450px; */
-    /* transform: rotateX(-100deg); */
+    transform: rotateX(-100deg);
     animation: menuBox 20s linear infinite;
 }
+
 @keyframes menuBox {
     0% {
         transform: perspective(650px) rotateX(-100deg) rotate(0deg);
         /* transform: rotateX(-100deg) rotate(0deg) perspective(150px); */
     }
+
     50% {
         transform: perspective(650px) rotateX(-100deg) rotate(-180deg);
         /* transform: rotateX(-100deg) rotate(-180deg) perspective(150px); */
     }
+
     100% {
         transform: perspective(650px) rotateX(-100deg) rotate(-360deg);
         /* transform: rotateX(-100deg) rotate(-360deg) perspective(150px); */
     }
 }
+
 .main__menu .arch_4 {
     grid-area: 1/1;
     width: var(--w);
@@ -157,32 +347,45 @@ box-shadow: 0px 3px 0px 0px hsla(0, 50%, 30%, 0.9);
     padding: 0.5em;
     filter: drop-shadow(0px 0px 1px hsla(30, 70%, 50%, 1));
 }
+
+.main__menu .arch_4 .arch_4-header {
+    /* color: transparent; */
+    /* text-shadow: */
+}
+
 .main__menu .arch_4:nth-child(1) {
     --_a: 0deg;
 }
+
 .main__menu .arch_4:nth-child(2) {
     --_a: 72deg;
 }
+
 .main__menu .arch_4:nth-child(3) {
     --_a: 144deg
 }
+
 .main__menu .arch_4:nth-child(4) {
     --_a: 216deg;
 }
+
 .main__menu .arch_4:nth-child(5) {
     --_a: 288deg;
 }
+
 .main__menu::before {
     content: "";
-    width: 100%;
-    height: 100%;
+    width: 150%;
+    height: 133%;
     position: absolute;
+    right: -24%;
+    top: -21%;
     /* inset: 100%; */
     /* clip-path: polygon(50% 0,calc(50% + .866*50%) 25%,calc(50% + .866*50%) 75%,50% 100%,calc(50% - .866*50%) 75%,calc(50% - .866*50%) 25%); */
     clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
     background: hsla(0, 50%, 50%, 1);
     /* transform: translateZ(calc(var(--w)/2)) rotate(90deg); */
-    transform: translateZ(100px) rotate(90deg);
+    transform: translateZ(100px) rotate(0deg);
 }
 
 
@@ -203,18 +406,21 @@ box-shadow: 0px 3px 0px 0px hsla(0, 50%, 30%, 0.9);
 .main__grid-container {
     /* border: 5px dashed orange; */
 }
+
 .main__parchment {
     /* width: 50%;
     display: block;
     margin: auto; */
 }
+
 #svg1 {
     /* width: 90%; */
     /* height: 50%; */
     box-shadow: inset 2px 1px 1px rgba(167, 167, 167, 0.4),
-    4px 4px 4px rgba(0, 0, 0, 0.4);
+        4px 4px 4px rgba(0, 0, 0, 0.4);
     margin-block: 1em;
 }
+
 p {
     /* padding: 1em;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
@@ -244,23 +450,27 @@ p {
 
     mix-blend-mode: luminosity;
 }
-.footer > * {
+
+.footer>* {
     /* display: grid; */
     /* display: flex; */
     /* place-content: center; */
 }
+
 .footer__email {
     /* border-left: 2px solid hsla(0, 50%, 0%, 1); */
     /* border-right: 2px solid hsla(0, 50%, 0%, 1); */
     padding: 0 0.5em;
     /* height: 100%; */
 }
+
 .footer-icon {
     text-decoration: none;
     /* color: hsla(265, 50%, 50%, 1); */
     color: hsla(0, 50%, 100%, 0.8);
     transition: color 0.2s;
 }
+
 .footer-icon:hover {
     color: hsla(0, 50%, 100%, 1);
     transform: scale(1.1);
