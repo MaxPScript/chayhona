@@ -115,7 +115,7 @@ body {
     /* place-content: center; */
     font-family: sans-serif;
     background: black;
-    transition: all 1s;
+    transition: all 2.5s;
     /* background: red; */
     /* overflow: scroll; */
     /* background: hsla(251, 100%, 2%, 1);
@@ -163,7 +163,7 @@ body {
     position: absolute;
     font-family: myGothic, serif;
     text-transform: uppercase;
-    transition: all 1.2s;
+    transition: all 2.5s;
     /* font-family: myGothic_2, serif; */
     /* font-family: myGothic_3, serif; */
     /* font-family: myGothic_4, serif; */
@@ -175,20 +175,78 @@ body {
     /* object-fit: contain; */
     width: 100%;
     display: block;
+    filter: brightness(1);
 }
 
 .header__overlay {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    height: 100vh;
     position: absolute;
     top: 0;
     background: hsl(0 50% 0% / 0.7);
     background-image: linear-gradient(0deg, hsl(0 50% 0%), hsl(0 50% 0% / 0));
-    transition: all 1.5s;
+    transition: all 2.5s;
 }
 
 .main {
     flex-grow: 1;
+    /* background: url(../images/bg_3_space.jpg);
+    background-size: cover; */
+}
+
+.footer {
+    width: 80%;
+    padding: 0.5rem;
+    margin: auto;
+    border: 1px solid blueviolet;
+    display: flex;
+    color: beige;
+    align-items: center;
+    justify-content: space-evenly;
+    background: url(../images/bg_3_space.jpg), hsl(0 0% 15%);
+    background-size: cover;
+    background-blend-mode: hard-light;
+    animation: footerBg 3s infinite;
+
+}
+
+@keyframes footerBg {
+    0% {
+        background: url(../images/bg_3_space.jpg), hsl(0 0% 15%);
+    }
+
+    50% {
+        background: url(../images/bg_3_space.jpg), hsl(0 0% 0%);
+    }
+
+    100% {
+        background: url(../images/bg_3_space.jpg), hsl(0 0% 15%);
+    }
+}
+
+.footer svg {
+    mix-blend-mode: normal;
+    display: block;
+    /* animation: animate_svg 5s infinite; */
+}
+
+@keyframes animate_svg {
+    0% {
+        mix-blend-mode: normal;
+    }
+
+    100% {
+        mix-blend-mode: hard-light;
+    }
+}
+
+.footer a {
+    width: unset;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: unset;
 }
 
 
@@ -263,7 +321,8 @@ body {
     position: fixed;
 }
 
-.main_ {
+/* .main_  */
+    {
     /* height: 60vw; */
     height: 85vh;
     margin-block-start: 1.5em;
@@ -428,7 +487,8 @@ p {
     background: rgba(0, 0, 0, 0.1); */
 }
 
-.footer {
+/* .footer  */
+    {
     width: 100%;
     /* height: 90px; */
     height: 15vh;

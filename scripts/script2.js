@@ -1,6 +1,9 @@
 log = console.log;
 log('test')
 
+window.onload = () => {
+
+}
 // log(typeof rectHeroImgBottom)
 // rectHeroImgHeight = heroImg.getBoundingClientRect().height;
 window.onresize = () => {
@@ -11,6 +14,9 @@ window.onresize = () => {
 enter_glow_id.addEventListener('pointerdown', e => {
     log(e.isPrimary)
     header__overlay_id.style.opacity = 0;
+    setTimeout(() => {
+        header__overlay_id.style.display = 'none';
+    }, 2500)
     // enter_id.style.opacity = 0
     enter_glow_id.style.display = 'none'
     body1.style.background = 'hsl(224 83% 5%)'
@@ -20,6 +26,7 @@ enter_glow_id.addEventListener('pointerdown', e => {
     header_h1_id.style.letterSpacing = '0.4rem'
     header_h1_id.style.color = 'hsl(223 59% 55%)'
     header_h1_id.style.textShadow = '-1px 2px hsl(73 50% 5%)'
+    header_img_id.style.filter = 'brightness(1.1)'
 })
 window.onscroll = () => {
     // rectHeroImgBottom = heroImg.getBoundingClientRect().bottom
