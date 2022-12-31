@@ -38,6 +38,12 @@ window.onscroll = () => {
     // getWindowPageYOffset()
     // getWindowScrollY()
     // getOffsetTopMain()
+
+    // header_h1_id.scroll({
+    //     top: 20,
+    //     left: 0,
+    //     behavior: 'smooth',
+    // })
 }
 function getWindowPageYOffset() {
     windowPageYOffset = window.pageYOffset;
